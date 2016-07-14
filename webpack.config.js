@@ -9,6 +9,12 @@ const config = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  plugins: [
+    new ClosureCompilerPlugin({
+      compilation_level: 'ADVANCED',
+      create_source_map: false
+    })
+  ],
   module: {
     loaders: [
       {
@@ -31,16 +37,6 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new ClosureCompilerPlugin({
-      compiler: {
-        language_in: 'ECMASCRIPT6',
-        language_out: 'ECMASCRIPT5',
-        compilation_level: 'ADVANCED'
-      },
-      concurrency: 3,
-    })
-  ],  
   resolve: {
     extensions: ['', '.js']
   },

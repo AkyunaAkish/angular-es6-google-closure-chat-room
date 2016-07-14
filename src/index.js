@@ -1,5 +1,10 @@
 import angular from 'angular'
 import 'angular-ui-router'
+
+import io from 'socket.io-client'
+
+const socket = io.connect()
+
 import './sass/style.scss'
 
 import HomeController from './controllers/home_controller.js'
